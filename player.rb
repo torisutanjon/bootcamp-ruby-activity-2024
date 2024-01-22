@@ -16,8 +16,20 @@ class Player
   # Specs: Using potion can heal 15 hp
   def use_potion
     # Prevent using of potions when no more potions left. Hint: use guard clause here
+    return "Not enough potions" if @potions == 0
+    
     # enter code here
+    heal = 15
+    healedHP = self.hp + heal
 
+    if(healedHP > 100)
+      self.hp = 100
+    else
+      self.hp = healedHP
+    end
+    
+    self.potions -= 1
+    
     puts "#{name} used potions."
   end
 end
