@@ -1,4 +1,11 @@
-class Player
+class BuffStat
+  attr_accessor :defBuff
+  def initialize
+    @defBuff = false
+  end
+end
+
+class Player < BuffStat
   MAX_POTIONS_QTY = 5.freeze
 
   attr_accessor :name, :potions, :hp
